@@ -1,0 +1,22 @@
+1.
+
+π(id_comanda, cantitate)
+σ (cantitate>0) (comanda);
+
+2.
+π nume, prenume, id_comanda 
+(client ⋈ {id_client = cnp} client_plaseaza_comanda);
+
+3.
+γ numarul_comenzii, COUNT (*) info_clienti_v1
+
+4.
+ π MAX (cost_total)
+ γ MAX (cost_total) comanda  
+
+5.
+
+π p . denumire_produs → numele_produsului, f . nume → furnizorul
+ σ p . furnizorul_produsului = f . id_furnizor
+  (ρ p produs ×
+   ρ f furnizor)
